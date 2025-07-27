@@ -1,0 +1,30 @@
+.book-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+}
+
+.book-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+}
+
+.book-card-content {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.text-section {
+  display: grid;
+  grid-template-rows: repeat(3, auto);
+  gap: 0.5rem;
+}
