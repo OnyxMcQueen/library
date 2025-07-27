@@ -42,19 +42,39 @@ button {
 
 /* Custom Properties */
 
+:root {
 
+  /* Color */
 
+  --clr-primary: #1e293b;
+  --clr-secondary: #fefcf3;
+  --clr-accent: #f4b400;
+  --clr-text: #1f1f1f;
+  --clr-card-bg: #ffffff;
 
+  /* Spacing */
 
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
 
+  /* Sizing / Radius */
 
+  --border-radius: 8px;
+  --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  /* Font */
+
+  --font-family: 'Roboto', sans-serif;
+}
 
 /* MAIN CSS */
 
 /* Header CSS */
 
 header {
-  padding: 1.5rem;
+  padding: var(--spacing-md);
   text-align: center;
 }
 
@@ -63,15 +83,15 @@ header {
 .book-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 1rem;
-  padding: 2rem;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-lg);
 }
 
 .book-card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  padding: 1.5rem;
+  background-color: var(--clr-card-bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--spacing-md);
 }
 
 .book-card:hover {
@@ -81,12 +101,12 @@ header {
 .book-card-content {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 1rem;
+  gap: var(--spacing-sm);
   align-items: center;
 }
 
 .text-section {
   display: grid;
   grid-template-rows: repeat(3, auto);
-  gap: 0.5rem;
+  gap: var(--spacing-xs);
 }
