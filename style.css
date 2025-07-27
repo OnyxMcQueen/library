@@ -69,13 +69,51 @@ button {
   --font-family: 'Roboto', sans-serif;
 }
 
-/* MAIN CSS */
+/* CENTRAL CSS */
+
+.main-layout {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
 
 /* Header CSS */
 
 header {
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg) 0;
   text-align: center;
+}
+
+/* Content Wrapper CSS */
+
+.content-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+/* Sidebar CSS */
+
+.sidebar {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: var(--spacing-md);
+  padding: var(--spacing-sm);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+input[type='checkbox'] {
+  align-self: flex-start;
 }
 
 /* Book Container & Book Card CSS */
