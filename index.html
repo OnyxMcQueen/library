@@ -11,7 +11,28 @@
   <header>
     <h1>The Book Vault</h1>
   </header>
-  
+
+  <aside class="sidebar">
+    <form action="#" class="book-form">
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" name="title" id="title" required minlength="1">
+      </div>
+      <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" name="author" id="author" required minlength="1">
+      </div>
+      <div class="form-group">
+        <label for="pages">Number Of Pages</label>
+        <input type="number" name="pages" id="pages" required minlength="1">
+      </div>
+      <div class="form-group">
+        <label for="isRead">Have you read this book?</label>
+        <input type="checkbox" name="isRead" id="isRead">
+      </div>
+    </form>
+  </aside>
+
   <div class="book-container">
     <div class="book-card">
       <div class="book-card-content">
