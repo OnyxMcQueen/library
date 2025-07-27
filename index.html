@@ -8,94 +8,102 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>The Book Vault</h1>
-  </header>
+  <!--Main Layout Container-->
+  <div class="main-layout">
+    <!--Site Header-->
+    <header>
+      <h1>The Book Vault</h1>
+    </header>
 
-  <aside class="sidebar">
-    <form action="#" class="book-form">
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input type="text" name="title" id="title" required minlength="1">
-      </div>
-      <div class="form-group">
-        <label for="author">Author</label>
-        <input type="text" name="author" id="author" required minlength="1">
-      </div>
-      <div class="form-group">
-        <label for="pages">Number Of Pages</label>
-        <input type="number" name="pages" id="pages" required minlength="1">
-      </div>
-      <div class="form-group">
-        <label for="isRead">Have you read this book?</label>
-        <input type="checkbox" name="isRead" id="isRead">
-      </div>
-    </form>
-  </aside>
-
-  <div class="book-container">
-    <div class="book-card">
-      <div class="book-card-content">
-        <div class="text-section">
-          <h3 class="book-title">Title</h3>
-
-          <div class="book-details">
-            <p>Author's Name</p>
-            <p>Amount Of Pages</p>
-            <p> Read Status</p>
+    <!--Content Container for Sidebar & Book Container-->
+    <div class="content-wrapper">
+      <!--Sidebar containing form element-->
+      <aside class="sidebar">
+        <form action="#" class="book-form">
+          <div class="form-group">
+            <label for="title">Title</label>
+            <input type="text" name="title" id="title" required minlength="1">
           </div>
-
-          <div class="book-buttons">
-            <!-- buttons -->
+          <div class="form-group">
+            <label for="author">Author</label>
+            <input type="text" name="author" id="author" required minlength="1">
           </div>
-        </div>
-
-        <div class="book-image">
-          <img src="..." alt="Book cover image">
-        </div>
-      </div>
-    </div>
-
-    <div class="book-card">
-      <div class="book-card-content">
-        <div class="text-section">
-          <h3 class="book-title">Title</h3>
-
-          <div class="book-details">
-            <p>Author's Name</p>
-            <p>Amount Of Pages</p>
-            <p> Read Status</p>
+          <div class="form-group">
+            <label for="pages">Number Of Pages</label>
+            <input type="number" name="pages" id="pages" required minlength="1">
           </div>
+          <div class="form-group">
+            <label for="isRead">Have you read this book?</label>
+            <input type="checkbox" name="isRead" id="isRead">
+          </div>
+        </form>
+      </aside>
+      <!--Book Container, holds Book cards-->
+      <div class="book-container">
+        <div class="book-card">
+          <div class="book-card-content">
+            <div class="text-section">
+              <h3 class="book-title">Title</h3>
 
-          <div class="book-buttons">
-            <!-- buttons -->
+              <div class="book-details">
+                <p>Author's Name</p>
+                <p>Amount Of Pages</p>
+                <p> Read Status</p>
+              </div>
+
+              <div class="book-buttons">
+                <!-- buttons -->
+              </div>
+            </div>
+
+            <div class="book-image">
+              <img src="..." alt="Book cover image">
+            </div>
           </div>
         </div>
 
-        <div class="book-image">
-          <img src="..." alt="Book cover image">
-        </div>
-      </div>
-    </div>
+        <div class="book-card">
+          <div class="book-card-content">
+            <div class="text-section">
+              <h3 class="book-title">Title</h3>
 
-    <div class="book-card">
-      <div class="book-card-content">
-        <div class="text-section">
-          <h3 class="book-title">Title</h3>
+              <div class="book-details">
+                <p>Author's Name</p>
+                <p>Amount Of Pages</p>
+                <p> Read Status</p>
+              </div>
 
-          <div class="book-details">
-            <p>Author's Name</p>
-            <p>Amount Of Pages</p>
-            <p> Read Status</p>
+              <div class="book-buttons">
+                <!-- buttons -->
+              </div>
+            </div>
+
+            <div class="book-image">
+              <img src="..." alt="Book cover image">
+            </div>
           </div>
-
-          <div class="book-buttons">
-            <!-- buttons -->
-          </div>
         </div>
 
-        <div class="book-image">
-          <img src="..." alt="Book cover image">
+        <div class="book-card">
+          <div class="book-card-content">
+            <div class="text-section">
+              <h3 class="book-title">Title</h3>
+
+              <div class="book-details">
+                <p>Author's Name</p>
+                <p>Amount Of Pages</p>
+                <p> Read Status</p>
+              </div>
+
+              <div class="book-buttons">
+                <!-- buttons -->
+              </div>
+            </div>
+
+            <div class="book-image">
+              <img src="..." alt="Book cover image">
+            </div>
+          </div>
         </div>
       </div>
     </div>
