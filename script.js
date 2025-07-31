@@ -24,3 +24,13 @@ function addBookToLibrary(title, author, pages, isRead){
   //Store the book in the library array
   myLibrary.push(book);
 }
+
+// Clears Book Container Content
+
+function clearBookContainer(){
+  // Target the Book Container
+  let bookContainer = document.querySelector('.book-container');
+
+  // Clear it's content
+  bookContainer.innerHTML = '';
+}
