@@ -103,3 +103,21 @@ function createBookCard(book){
 
   return bookCard;
 }
+
+// Render Books
+
+function renderBooks(){
+  // Target Book Container
+  let bookContainer = document.querySelector('.book-container');
+
+  // Clear the book container
+  clearBookContainer();
+
+  //Loop through myLibrary
+  for(const book of myLibrary){
+    // For each book, call the createBookCard function
+    let completedBookCard = createBookCard(book);
+    // Append into book container
+    bookContainer.append(completedBookCard);
+  }
+}
