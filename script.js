@@ -1,5 +1,12 @@
+// GLOBAL VARIABLES //
+let form = document.querySelector('.sidebar form');
+
+
 //Store Book Objects in an Array
 const myLibrary = [];
+
+
+// FUNCTIONS //
 
 // Constructor Function to create Book objects
 function Book(title, author, pages, isRead){
@@ -92,7 +99,7 @@ function createBookCard(book){
   bookImageDiv.classList.add('book-image');
   
   let bookImage = document.createElement('img');
-  bookImage.src = '...';
+  bookImage.src = 'assets/book-cover-placeholder.png';
   bookImage.alt = 'Book Cover Image';
 
   bookImageDiv.append(bookImage);
@@ -121,3 +128,27 @@ function renderBooks(){
     bookContainer.append(completedBookCard);
   }
 }
+
+
+// EVENT LISTENERS // 
+
+// Form Submission Logic
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  // Grab each input value
+  let title = document.getElementById('title').value;
+  let author = document.getElementById('author').value;
+  let pages = document.getElementById('pages').value;
+  let isRead = document.getElementById('isRead').checked;
+
+  // Pass in input values to AddBookToLibrary function
+  addBookToLibrary(title, author, pages, isRead);
+
+  //Render Book onto page
+  renderBooks();
+
+  //Reset the Form
+  form.reset();
+});
