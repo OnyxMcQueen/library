@@ -160,6 +160,12 @@ button[type='submit'] {
   padding: var(--spacing-xs) var(--spacing-md);
   border-radius: var(--border-radius);
   font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button[type='submit']:hover {
+  background-color: #2563eb;
 }
 
 /* Book Container & Book Card CSS */
@@ -194,6 +200,45 @@ button[type='submit'] {
   display: grid;
   grid-template-rows: repeat(3, auto);
   gap: var(--spacing-xs);
+}
+
+.book-details p {
+  font-size: 0.95rem;
+}
+
+.card-btns {
+  display: flex;
+  justify-content: flex-start;
+  gap: var(--spacing-sm);
+  margin-top: var(--spacing-sm);
+}
+
+.remove-btn,
+.toggle-read-btn {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.remove-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.remove-btn:hover {
+  background-color: #dc2626;
+}
+
+.toggle-read-btn {
+  background-color: #10b981;
+  color: white;
+}
+
+.toggle-read-btn:hover {
+  background-color: #059669;
 }
 
 .book-image img {
