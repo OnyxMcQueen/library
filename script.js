@@ -1,5 +1,6 @@
 // GLOBAL VARIABLES //
 let form = document.querySelector('.sidebar form');
+let bookContainer = document.querySelector('.book-container');
 
 
 //Store Book Objects in an Array
@@ -151,4 +152,31 @@ form.addEventListener('submit', (e) => {
 
   //Reset the Form
   form.reset();
+});
+
+// Remove Book Button Logic
+
+bookContainer.addEventListener('click', (e) => {
+  // Check if clicked element has class .remove-btn
+  if(!(e.target.classList.contains('remove-btn'))){
+    return;
+  }
+
+  // Find the closest .book-card ancestor that the click event occurs in;
+  let bookCard = e.target.closest('.book-card');
+
+  // Extract the data id attribute value from the book card
+  let bookId = bookCard.dataset.id;
+
+  // Find the book in the library
+  let indexOfBook = myLibrary.findIndex((element) => {
+    return element.id === bookId;
+  });
+
+  // If the index isn't -1, then remove book from library and re-render
+
+  if (indexOfBook !== -1) {
+  myLibrary.splice(indexOfBook, 1);
+  renderBooks();
+  }
 });
