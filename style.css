@@ -194,3 +194,9 @@ button[type='submit'] {
   grid-template-rows: repeat(3, auto);
   gap: var(--spacing-xs);
 }
+
+.book-image img {
+  height: 200px;
+  width: auto;
+  object-fit: cover;
+}
