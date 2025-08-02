@@ -176,6 +176,7 @@ button[type='submit'] {
   border-radius: var(--border-radius);
   box-shadow: var(--card-shadow);
   padding: var(--spacing-md);
+  height: min-content;
 }
 
 .book-card:hover {
