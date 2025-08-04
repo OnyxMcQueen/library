@@ -177,9 +177,34 @@ button[type='submit']:hover {
 
 .book-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   gap: var(--spacing-sm);
   padding: var(--spacing-lg);
+}
+
+.empty-state {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--spacing-md);
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow);
+  padding: var(--spacing-lg);
+  background-color: var(--clr-secondary);
+}
+
+.empty-image-container img {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+}
+
+.empty-message-container {
+  display: flex;
+  justify-content: center;
 }
 
 .book-card {
