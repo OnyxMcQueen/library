@@ -36,11 +36,12 @@ function addBookToLibrary(title, author, pages, isRead){
 // Clears Book Container Content
 
 function clearBookContainer(){
-  // Target the Book Container
-  let bookContainer = document.querySelector('.book-container');
-
-  // Clear it's content
-  bookContainer.innerHTML = '';
+  // Grab the book container
+  const bookContainer = document.querySelector('.book-container');
+  // Grab all the children that have the .book-card class
+  const bookCards = bookContainer.querySelectorAll('.book-card');
+  // Safely remove them from the book-container element
+  bookCards.forEach(card => card.remove());
 }
 
 // Creates Book Card
@@ -115,9 +116,11 @@ function createBookCard(book){
 // Render Books
 
 function renderBooks(){
+
   // Target Book Container
   let bookContainer = document.querySelector('.book-container');
   let emptyState = document.querySelector('.empty-state');
+  
 
   // Clear the book container
   clearBookContainer();
@@ -154,7 +157,7 @@ form.addEventListener('submit', (e) => {
   let pages = document.getElementById('pages').value;
   let isRead = document.getElementById('isRead').checked;
 
-  // Pass in input values to AddBookToLibrary function
+  // Pass in input values to addBookToLibrary function
   addBookToLibrary(title, author, pages, isRead);
 
   //Render Book onto page
@@ -211,4 +214,6 @@ bookContainer.addEventListener('click', (e) => {
 
 });
 
-document.addEventListener('DOMContentLoaded', renderBooks);
+document.addEventListener('DOMContentLoaded', () => {
+  renderBooks();
+});
