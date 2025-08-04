@@ -154,29 +154,31 @@ form.addEventListener('submit', (e) => {
   form.reset();
 });
 
-// Remove Book Button Logic
+// Central Container for Remove/Mark As Read logic.
 
 bookContainer.addEventListener('click', (e) => {
-  // Check if clicked element has class .remove-btn
-  if(!(e.target.classList.contains('remove-btn'))){
-    return;
-  }
 
-  // Find the closest .book-card ancestor that the click event occurs in;
-  let bookCard = e.target.closest('.book-card');
+  // Did the event occur on the remove button?
+  if(e.target.classList.contains('remove-btn')){
+    // Find the closest .book-card ancestor that the click event occurs in;
+    let bookCard = e.target.closest('.book-card');
 
-  // Extract the data id attribute value from the book card
-  let bookId = bookCard.dataset.id;
+    // Extract the data id attribute value from the book card
+    let bookId = bookCard.dataset.id;
 
-  // Find the book in the library
-  let indexOfBook = myLibrary.findIndex((element) => {
+    // Find the book in the library
+    let indexOfBook = myLibrary.findIndex((element) => {
     return element.id === bookId;
-  });
+    });
 
-  // If the index isn't -1, then remove book from library and re-render
-
-  if (indexOfBook !== -1) {
-  myLibrary.splice(indexOfBook, 1);
-  renderBooks();
+    if (indexOfBook !== -1) {
+    myLibrary.splice(indexOfBook, 1);
+    renderBooks();
+    }
+  } 
+  // If not did the event occur on the mark as read button?
+  else if(e.target.classList.contains('toggle-read-btn')){
+    // Mark as Read logic goes here
   }
+
 });
