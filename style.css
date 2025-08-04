@@ -82,6 +82,10 @@ button {
   grid-template-rows: auto 1fr;
 }
 
+.hidden {
+  display: none !important;
+}
+
 /* Header CSS */
 
 header {
