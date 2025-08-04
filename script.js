@@ -117,9 +117,19 @@ function createBookCard(book){
 function renderBooks(){
   // Target Book Container
   let bookContainer = document.querySelector('.book-container');
+  let emptyState = document.querySelector('.empty-state');
 
   // Clear the book container
   clearBookContainer();
+
+  // Show/Hide empty state message depending on whether library has books
+  if(myLibrary.length === 0){
+    emptyState.classList.remove('hidden');
+    //Since there's no books, best to return early
+    return;
+  } else {
+    emptyState.classList.add('hidden');
+  }
 
   //Loop through myLibrary
   for(const book of myLibrary){
@@ -200,3 +210,5 @@ bookContainer.addEventListener('click', (e) => {
   }
 
 });
+
+document.addEventListener('DOMContentLoaded', renderBooks);
