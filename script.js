@@ -178,7 +178,25 @@ bookContainer.addEventListener('click', (e) => {
   } 
   // If not did the event occur on the mark as read button?
   else if(e.target.classList.contains('toggle-read-btn')){
-    // Mark as Read logic goes here
+    // Find the closest .book-card ancestor that the click event occurs in;
+    let bookCard = e.target.closest('.book-card');
+
+    // Extract the data id attribute value from the book card
+    let bookId = bookCard.dataset.id;
+
+    // Find the book in the myLibrary array using the id.
+    let book = myLibrary.find((element) => {
+      return element.id === bookId;
+    })
+
+    // In case a book isn't found.
+    if (!book) return;
+
+    //Flip the isRead property
+    book.isRead = !book.isRead;
+
+    //Rerender the book container
+    renderBooks();
   }
 
 });
