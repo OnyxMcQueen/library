@@ -9,20 +9,24 @@ const myLibrary = [];
 
 // FUNCTIONS //
 
-// Constructor Function to create Book objects
-function Book(title, author, pages, isRead){
-  this.id = crypto.randomUUID();
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.isRead = isRead;
-}
+class Book {
+  constructor(title, author, pages, isRead){
+    this.id = crypto.randomUUID();
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.isRead = isRead;
+  }
 
-// Put info function on Book instance prototype object.
-Book.prototype.info = function () {
-  let readStatus = this.isRead ? 'Read' : 'Not Read Yet'
-  return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}.`;
-};
+  info(){
+    let readStatus = this.isRead ? 'Read' : 'Not Read Yet'
+    return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}.`;
+  }
+
+  toggleReadStatus(){
+    this.isRead = !this.isRead;
+  }
+}
 
 // Function creates a book and then stores it in library.
 
@@ -206,7 +210,7 @@ bookContainer.addEventListener('click', (e) => {
     if (!book) return;
 
     //Flip the isRead property
-    book.isRead = !book.isRead;
+    book.toggleReadStatus();
 
     //Rerender the book container
     renderBooks();
