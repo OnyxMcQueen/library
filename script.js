@@ -22,6 +22,10 @@ class Book {
     let readStatus = this.isRead ? 'Read' : 'Not Read Yet'
     return `${this.title} by ${this.author}, ${this.pages} pages, ${readStatus}.`;
   }
+
+  toggleReadStatus(){
+    this.isRead = !this.isRead;
+  }
 }
 
 // Function creates a book and then stores it in library.
@@ -206,7 +210,7 @@ bookContainer.addEventListener('click', (e) => {
     if (!book) return;
 
     //Flip the isRead property
-    book.isRead = !book.isRead;
+    book.toggleReadStatus();
 
     //Rerender the book container
     renderBooks();
